@@ -1,9 +1,10 @@
+import random
 my_hero = {
     "name": "Aelin",
     "level": 1,
     "health": 100,
     "equipment": {"Darrens' Sword", "Dagger", "Light Armor"},
-    "attacks": (("Fire Bolt", 25), ("Mind SLiver", 15), ("Aganazzar's Scorcher", 35)),
+    "attacks": (("Fire Bolt", 30), ("Mind Sliver", 20), ("Aganazzar's Scorcher", 35)),
     "coins": {
         "copper": 20,
         "silver": 101,
