@@ -2,9 +2,20 @@ import random
 from characters import my_hero, enemy_one, enemy_two,enemy_three
 # hero and enemy attacks to be chosen at random
 
-def battle_one():
-    pass
-    # I want my Hero and/or Enemy's health to decrease based on the opponent's attack power
+def battle(enemy_passed):
+    while enemy_passed["health"] >= 0:
+        attack_name, attack_power = random.choice(my_hero["attacks"])
+        e_attack, e_power = random.choice(enemy_passed["attacks"])
+        print(f"{my_hero['name']} used {attack_name}! It did {attack_power} damage!")
+        enemy_passed["health"] -= attack_power
+        print(f"{enemy_passed['name']} has {enemy_passed['health']} health points left!")
+        print(f"{enemy_passed['name']} used {e_attack} for {e_power} damage!")
+        my_hero["health"] -= e_power
+        print(f"{my_hero['name']} has {my_hero['health']} health points left!")
+        if enemy_passed["health"] <= 0:
+            print("Battle won!")
+            break
+
     """
     1. Get an attack from my Hero 
     2. Get an attack from my Enemy
@@ -14,30 +25,16 @@ def battle_one():
     6. I want to check to see if either opponent has lost all of their health
     7. If either one has, I want to finish the battle and declare a winner
     """
-# encounter = 1
-# while encounter <= 4:
-#     battle_one
-# while my_hero["health"] >= 0:
-#     attack_name, attack_power = random.choice(my_hero["attacks"])
-#     e1_attack, e1_power = random.choice(enemy_one["attacks"])
-#     print(f"{my_hero['name']} used {attack_name}! It did {attack_power} damage!")
-#     enemy_one["health"] -= attack_power
-#     print(f"{enemy_one['name']} has {enemy_one['health']} health points left!")
-#     print(f"{enemy_one['name']} used {e1_attack} for {e1_power} damage!")
-#     my_hero["health"] -= e1_power
-#     print(f"{my_hero['name']} has {my_hero['health']} health points left!")
-#     if enemy_one["health"] <= 0:
-#         print("Battle won! On to the next foe!")
 
-def equipment():
-    print(f"{my_hero['name']} collected {enemy_one['equipment']}!")
-    my_hero["equipment"].update(enemy_one["equipment"])
-    # for key in my_hero["coins"]:
-    #     if key in enemy_one["coins"]:
-    #         my_hero["coins"] = enemy_one["coins"] + my_hero["coins"]
-    #my_hero["coins"].update(enemy_one["coins"])
-    my_hero["coins"].update(enemy_one["coins"])
+def equipment(enemy_passed):
+    print(f"{my_hero['name']} collected {enemy_passed['equipment']}!")
+    my_hero["equipment"].update(enemy_passed["equipment"])
     print(my_hero["equipment"])
+
+def coins(enemy_passed):    
+    my_hero["coins"]["copper"] += enemy_passed["coins"]["copper"]
+    my_hero["coins"]["silver"] += enemy_passed["coins"]["silver"]
+    my_hero["coins"]["gold"] += enemy_passed["coins"]["gold"]
     print(my_hero["coins"])
     
     '''
@@ -48,9 +45,15 @@ def equipment():
         3. combine coin dictionaries; .update()
         4. print new equipment, and coins
     '''
-equipment()
+def run_game():
+    battle(enemy_one)
+    equipment(enemy_one)
+    coins(enemy_one)
+    battle(enemy_two)
+    equipment(enemy_two)
+    coins(enemy_two)
+    battle(enemy_three)
+    equipment(enemy_three)
+    coins(enemy_three)
 
-# run_rpg()
-#     batt logic()
-#       equip()
-            # use merge for looting coins?
+run_game()
