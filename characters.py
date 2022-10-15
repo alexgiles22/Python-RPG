@@ -4,7 +4,7 @@ my_hero = {
     "level": 1,
     "health": 100,
     "equipment": {"Darrens' Sword", "Dagger", "Light Armor"},
-    "attacks": (("Fire Bolt", 30), ("Mind Sliver", 20), ("Aganazzar's Scorcher", 35)),
+    "attacks": (("Fire Bolt", 40), ("Mind Sliver", 30), ("Aganazzar's Scorcher", 50)),
     "coins": {
         "copper": 20,
         "silver": 101,
@@ -28,7 +28,7 @@ enemy_two = {
     "level": 5,
     "health": 100,
     "eqipment": {"Silver Arm Braces", "Brain Matter"},
-    "attacks": (("Mega Punch", 20), ("Eat Brains", 25), ("Flail", 20)),
+    "attacks": (("Mega Punch", 20), ("Eat Brains", 20), ("Flail", 15)),
     "coins": {
         "copper": 5,
         "silver": 10,
@@ -38,9 +38,9 @@ enemy_two = {
 enemy_three = {
     "name": "Endeavor",
     "level": 10,
-    "health": 150,
+    "health": 100,
     "equipment": {"Hero Suit", "Lost Family Values", "Guilt"},
-    "attacks": (("Gaslight", 25), ("Shame", 30), ("Family Destruction", 35)),
+    "attacks": (("Gaslight", 25), ("Shame", 30), ("Family Destruction", 30)),
     "coins": {
         "copper": 0,
         "silver": 15,
