@@ -2,9 +2,9 @@ import random
 my_hero = {
     "name": "Aelin",
     "level": 1,
-    "health": 100,
+    "health": 125,
     "equipment": {"Darrens' Sword", "Dagger", "Light Armor"},
-    "attacks": (("Fire Bolt", 40), ("Mind Sliver", 30), ("Aganazzar's Scorcher", 50)),
+    "attacks": (("Fire Bolt", 45), ("Mind Sliver", 35), ("Aganazzar's Scorcher", 55)),
     "coins": {
         "copper": 20,
         "silver": 101,
@@ -14,9 +14,9 @@ my_hero = {
 enemy_one = {
     "name": "Morty",
     "level": 1,
-    "health": 75,
+    "health": 50,
     "equipment": {"Torn Cape", "Rusted Handaxe"},
-    "attacks": (("Unnarmed Strike", 15), ("Handaxe", 20), ("Acid Spew", 20)),
+    "attacks": (("Unnarmed Strike", 15), ("Handaxe", 15), ("Acid Spew", 15)),
     "coins": {
         "copper": 20,
         "silver": 5,
@@ -26,8 +26,8 @@ enemy_one = {
 enemy_two = {
     "name": "Nomu",
     "level": 5,
-    "health": 100,
-    "eqipment": {"Silver Arm Braces", "Brain Matter"},
+    "health": 75,
+    "equipment": {"Silver Arm Braces", "Brain Matter"},
     "attacks": (("Mega Punch", 20), ("Eat Brains", 20), ("Flail", 15)),
     "coins": {
         "copper": 5,

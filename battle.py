@@ -1,6 +1,5 @@
 import random
 from characters import my_hero, enemy_one, enemy_two,enemy_three
-# hero and enemy attacks to be chosen at random
 
 def battle(enemy_passed):
     while enemy_passed["health"] >= 0:
@@ -18,11 +17,11 @@ def battle(enemy_passed):
             print(f"{my_hero['name']} is now level {my_hero['level']}!")
             break
         elif my_hero["health"] <= 0:
-            input(f"Oh no! {my_hero['name']} lost! Would you like to try again? Y/N")
+            input(f"Oh no! {my_hero['name']} lost! Would you like to try again? Y/N ")
             if input == "Y":
                 run_game()
             elif input != "Y":
-                input("I didn't get that, could you try again? Y/N")
+                input("I didn't get that, could you try again? Y/N ")
 
 def equipment(enemy_passed):
     print(f"{my_hero['name']} collected {enemy_passed['equipment']}!")
@@ -34,6 +33,7 @@ def coins(enemy_passed):
     my_hero["coins"]["gold"] += enemy_passed["coins"]["gold"]
     
 def run_game():
+    print("Time to save the world! Do you have what it takes?")
     battle(enemy_one)
     equipment(enemy_one)
     coins(enemy_one)
